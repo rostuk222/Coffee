@@ -95,3 +95,4 @@ E:\Coffee\CoffeeV2\bin\sv-SE\Kendo.Mvc.resources.dll
 E:\Coffee\CoffeeV2\bin\tr-TR\Kendo.Mvc.resources.dll
 E:\Coffee\CoffeeV2\bin\uk-UA\Kendo.Mvc.resources.dll
 E:\Coffee\CoffeeV2\bin\zh-CN\Kendo.Mvc.resources.dll
+E:\Coffee\CoffeeV2\obj\Debug\CoffeeV2.csprojResolveAssemblyReference.cache
