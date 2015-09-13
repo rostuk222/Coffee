@@ -1,0 +1,228 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <h3>Вибір замовлення</h3>
+    <table>
+        <tr>
+            <td><div id="buttonRistreto">Рістрето</div></td>
+            <td><div id="buttonEspresso">Еспресо</div></td>
+            <td><div id="buttonAmericano">Американо</div></td>
+            <td><div id="buttonGasMilk">Спінене молоко</div></td>
+            <td><div id="buttonMilkSyrop">Молоко з сиропом</div></td>
+            <td><div id="buttonTea">Чай</div></td>
+        </tr>
+        <tr>
+            <td><div id="buttonMakiato">Макіато</div></td>
+            <td><div id="buttonDopioEspresso">Допіо еспресо</div></td>
+            <td><div id="buttonAmericanAmericano">Американ американо</div></td>
+            <td><div id="buttonChocochino">Шокочіно</div></td>
+            <td><div id="buttonSnikers">Снікерс</div></td>
+            <td><div id="buttonBaunti">Баунті</div></td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Латте")
+                    .Name("lateButton")
+                    .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Капучіно")
+                    .Name("capuchinoButton")
+                        .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Ванілічіно")
+                    .Name("vanilichinoButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Фрапе")
+                    .Name("frapeButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Фредо")
+                    .Name("fredoButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Мілк шейк")
+                    .Name("milkshakeButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Караме-латте")
+                    .Name("caramelateButton")
+                           .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Чокочіно")
+                    .Name("chokochinoButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Черічіно")
+                    .Name("cherrychinoButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Фреска")
+                    .Name("freskaButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Холодний Снікерс")
+                    .Name("snickerscoldButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Холодний Баунті")
+                    .Name("bountycoldButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Мокко")
+                    .Name("mokkoButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Coffee Nice")
+                    .Name("coffeeniceButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Медовий Раф")
+                    .Name("rafButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Смурфик")
+                    .Name("smurfButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Піна Колада")
+                    .Name("pinacoladadButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Тірамісу")
+                    .Name("tiramisuButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Мохіто")
+                    .Name("moxitoButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Вишневий чай")
+                    .Name("cherryteaButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+            <td>
+                @(Html.Kendo().Button()
+                    .Content("Глінтвейн")
+                    .Name("glintveinButton")
+                            .Events(a => a.Click("addsWindowOpen"))
+                )
+            </td>
+        </tr>
+    </table>
+</div>
+@(Html.Kendo().Window()
+.Visible(false)
+    .Name("coffeeWindow")
+    .AutoFocus(true)
+    .Draggable(true)
+    .Iframe(true)
+    .Title("Додатки")
+    .HtmlAttributes(new { style = "background-color:aliceblue; border-color:teal;" })
+    .Content(@<text>
+        @Html.Action("Window", "Home")
+    </text>)
+)
+
+@(Html.Kendo().Window()
+.Visible(false)
+    .Name("thxWindow")
+    .AutoFocus(true)
+    .Draggable(true)
+    .Iframe(true)
+    .Title("Viiiii")
+    .HtmlAttributes(new { style = "background-color:aliceblue; border-color:teal;" })
+    .Content("Thank you!")
+)
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#buttonRistreto").kendoButton({ click: addsWindowOpen});
+        $("#buttonEspresso").kendoButton({ click: addsWindowOpen});
+        $("#buttonAmericano").kendoButton({ click: addsWindowOpen});
+        $("#buttonGasMilk").kendoButton({ click: addsWindowOpen});
+        $("#buttonMilkSyrop").kendoButton({ click: addsWindowOpen});
+        $("#buttonTea").kendoButton({ click: addsWindowOpen});
+        $("#buttonMakiato").kendoButton({ click: addsWindowOpen});
+        $("#buttonDopioEspresso").kendoButton({ click: addsWindowOpen});
+        $("#buttonAmericanAmericano").kendoButton({ click: addsWindowOpen});
+        $("#buttonChocochino").kendoButton({ click: addsWindowOpen});
+        $("#buttonSnikers").kendoButton({ click: addsWindowOpen});
+        $("#buttonBaunti").kendoButton({ click: addsWindowOpen });
+
+        $("#get").kendoButton({click: submit });
+    });
+</script>
+

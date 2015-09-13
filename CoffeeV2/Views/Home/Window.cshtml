@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Window";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+    <h2>Виберіть добавки до кави</h2>
+    <div id="option">
+        <h3>Добавки</h3>
+        @(Html.Kendo().ComboBox()
+          .Name("add")
+          .Filter("contains")
+          .Placeholder("Select add...")
+          .DataTextField("Text")
+          .DataValueField("Value")
+          .BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Молоко", Value = "1"
+              },
+              new SelectListItem() {
+                Text = "Вершки", Value = "2"
+              },
+              new SelectListItem() {
+                Text = "Сироп", Value = "3"
+              },
+          })
+          .SelectedIndex(3)
+          .Suggest(true)
+        )
+
+        <h3>Розмір</h3>
+        @(Html.Kendo().ComboBox()
+          .Name("size")
+          .Placeholder("Select size...")
+          .BindTo(new List<int>() {
+              120,
+              350,
+              400,
+              500
+          })
+          .SelectedIndex(3)
+          .Suggest(true)
+        )
+
+        <div id="get">Обрати</div>
+    </div>
+
+

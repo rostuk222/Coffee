@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Kendo().TabStrip().Name("MainTab").Items(
+    tabstrip =>
+    {
+        tabstrip.Add().Text("Замовлення").Selected(true)
+            .LoadContentFrom("TabStripOrder", "Home");
+        tabstrip.Add().Text("Витрати").Content("Молоко і бла бла бла");
+        tabstrip.Add().Text("Склад").LoadContentFrom("Index","Stock");
+        tabstrip.Add().Text("Каса").Content("Каса - 1700 грн");
+}
+)
