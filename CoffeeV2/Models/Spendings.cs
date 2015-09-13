@@ -10,13 +10,8 @@ namespace CoffeeV2.Models
     {
         public int ID { get; set; }
         public DateTime SpendingsDate {get; set;}
-        public int CoffeeSpendings { get; set; }
-        public int MilkSpendings { get; set; }
-        public int WaterSpendings { get; set; }
-        public int SpendingsSyropID { get; set; }
-        public int SyropQuantitySpendings { get; set; }
-        public int SpendingsAlkoholID { get; set; }
-        public int AlkoholQuantitySpendings { get; set; }
-
+        public int SpendingsName{ get; set; }
+        public int SpendingsQuantity { get; set; }
+        public int SpendingsPrice { get; set; }
     }
 }

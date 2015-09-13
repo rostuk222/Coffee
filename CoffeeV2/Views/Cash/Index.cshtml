@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="clientsDb3">
+    @( Html.Kendo().Grid<CoffeeV2.Models.Cash>()
+        .Name("grid")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Date).Title("Дата");
+            columns.Bound(c => c.Costs).Title("Витрати");
+            columns.Bound(c => c.Income).Title("Готівка");
+            columns.Bound(c => c.Cashless).Title("Безготівка");
+            columns.Bound(c => c.Result).Title("Залишок");
+        })
+        .HtmlAttributes(new { style = "height: 300px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            //.Read(read => read.Action("SpendingsRead", "Spendings"))
+        )
+    )
+</div>
+
+<style>
+    #clientsDb3 {
+        width: 952px;
+        height: 396px;
+        margin: 20px auto 0;
+        padding: 51px 4px 0 4px;
+    }
+
+    .customer-name {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 32px;
+        padding-left: 3px;
+    }
+</style>

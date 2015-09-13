@@ -7,8 +7,8 @@
     {
         tabstrip.Add().Text("Замовлення").Selected(true)
             .LoadContentFrom("TabStripOrder", "Home");
-        tabstrip.Add().Text("Витрати").Content("Молоко і бла бла бла");
+        tabstrip.Add().Text("Витрати").LoadContentFrom("Index","Spendings");
         tabstrip.Add().Text("Склад").LoadContentFrom("Index","Stock");
-        tabstrip.Add().Text("Каса").Content("Каса - 1700 грн");
+        tabstrip.Add().Text("Каса").LoadContentFrom("Index", "Cash");
 }
 )

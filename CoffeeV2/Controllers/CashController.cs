@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CoffeeV2.Models;
 using System.Data.Entity;
+using CoffeeV2.Models;
 
 namespace CoffeeV2.Controllers
 {
-    public class StockController : Controller
+    public class CashController : Controller
     {
-        // GET: Stock
+        // GET: Cash
+             CoffeeContext db = new CoffeeContext();
 
-        CoffeeContext db = new CoffeeContext();
-
-        public IQueryable<Stock> StockRead()
+        public IQueryable<Cash> SpendingsRead()
         {
             var date = DateTime.Parse("08/08/2015");
-            var result = db.Stocks.Where(stock => stock.Date == date);
+            var result = db.Cash.Where(cash => cash.Date == date);
 
             return result;
         }

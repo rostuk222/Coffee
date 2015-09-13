@@ -6,20 +6,12 @@ using System.Data.Entity;
 
 namespace CoffeeV2.Models
 {
-    public partial class Recipe
+    public partial class Cash
     {
-        public int ID { get; set; }
-        public string RecipeName { get; set; }
-        public int RecipeSize { get; set; }
-        public string RecipeAdd { get; set; }
-        public int RecipeCoffeeQuantity { get; set; }
-        public int RecipeMilkQuantity { get; set; }
-        public int RecipeWaterQuantity { get; set; }
-        public decimal RecipePrice { get; set; }
-        public int SyropID { get; set; }
-        public string SyropName { get; set; }
-        public int AlkoholID { get; set; }
-        public string AlkoholName { get; set; }
-
+        public DateTime Date { get; set; }
+        public decimal Costs { get; set; }
+        public decimal Income { get; set; }
+        public decimal Cashless { get; set; }
+        public decimal Result { get; set; }
     }
 }
