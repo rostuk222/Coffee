@@ -8,7 +8,7 @@
             columns.Bound(c => c.Name).Title("Назва");
             columns.Bound(c => c.Quantity).Title("Кількість");
         })
-        .HtmlAttributes(new { style = "height: 1200px;" })
+        .HtmlAttributes(new { style = "height: 430px;" })
         .Pageable(pageable => pageable
             .Refresh(true)
             .PageSizes(true)
@@ -23,8 +23,9 @@
 <style>
     #stockDb {
         width: 1200px;
-        height: 1200px;
+        height: 800px;
         margin: 20px auto 0;
         padding: 51px 4px 0 4px;
     }
 </style>
+
