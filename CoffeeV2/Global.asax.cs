@@ -18,7 +18,7 @@ namespace CoffeeV2
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            Database.SetInitializer(new CoffeeDbInitializer());
+            //Database.SetInitializer(new CoffeeDbInitializer());
         }
     }
 }

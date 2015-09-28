@@ -64,6 +64,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -121,14 +123,30 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Alkohol.cs" />
-    <Compile Include="Models\CoffeeContext.cs" />
-    <Compile Include="Models\CoffeeDbInitializer.cs" />
-    <Compile Include="Models\Orders.cs" />
-    <Compile Include="Models\Recipe.cs" />
-    <Compile Include="Models\Spendings.cs" />
-    <Compile Include="Models\Stock.cs" />
-    <Compile Include="Models\Syrop.cs" />
+    <Compile Include="Models\Cash.cs">
+      <DependentUpon>Coffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coffee.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coffee.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Coffee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Coffee.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Spendings.cs">
+      <DependentUpon>Coffee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stock.cs">
+      <DependentUpon>Coffee.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -497,6 +515,23 @@
     <Content Include="Content\kendo\2015.2.902\fonts\DejaVu\DejaVuSerif.ttf" />
     <Content Include="Content\kendo\2015.2.902\images\kendoui.ttf" />
     <Content Include="Content\kendo\2015.2.902\images\kendoui.woff" />
+    <EntityDeploy Include="Models\Coffee.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Coffee.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Coffee.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Coffee.edmx</DependentUpon>
+      <LastGenOutput>Coffee.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Coffee.edmx.diagram">
+      <DependentUpon>Coffee.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Coffee.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Coffee.edmx</DependentUpon>
+      <LastGenOutput>Coffee.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -669,7 +704,6 @@
       <BrowseToURL>~/Home/Index</BrowseToURL>
     </Content>
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\stock.cshtml" />
     <Content Include="Views\Stock\Index.cshtml" />
     <Content Include="Scripts\kendo\2015.2.902\jquery.min.map" />
     <Content Include="Scripts\kendo\2015.2.902\kendo.all.min.js.map" />
@@ -795,6 +829,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -2,7 +2,7 @@
 <html>
 <head>
     
-    <title>Coffee nice. Coffee solves everything!</title>
+    <title>Coffee nice</title>
     <link href="@Url.Content("~/Content/kendo/2015.2.902/kendo.common.min.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/kendo/2015.2.902/kendo.default.min.css")" rel="stylesheet" type="text/css" />
 	<link href="@Url.Content("~/Content/kendo/2015.2.902/kendo.common-bootstrap.min.css")" rel="stylesheet" type="text/css" />
@@ -47,14 +47,12 @@
 </head>
 <body style="background-color:#643319">  
 
+    @RenderBody()
     
-
-    @RenderBody();
-
 </body>
 </html>
 <script>
-
+      
         function addsWindowOpen() {
             $("#coffeeWindow").data("kendoWindow").open().center();
         }

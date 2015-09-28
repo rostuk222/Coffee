@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using CoffeeV2.Models;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
 
 namespace CoffeeV2.Controllers
 {
@@ -14,12 +16,15 @@ namespace CoffeeV2.Controllers
 
         CoffeeContext db = new CoffeeContext();
 
-        public IQueryable<Spendings> SpendingsRead()
+        public ActionResult SpendingsRead ([DataSourceRequest] DataSourceRequest request)
         {
-            var date = DateTime.Parse("08/08/2015");
-            var result = db.Spending.Where(spending => spending.SpendingsDate == date);
+          //  var date = DateTime.Parse("08/08/2015");
+          //  var result = db.Spendings.Where(spending => spending.Datetime == date);
+         //   return result;
 
-            return result;
+            IQueryable<Spendings> spending = db.Spendings;
+            DataSourceResult result = spending.ToDataSourceResult(request);
+            return Json(result);
         }
 
         public ActionResult Index()

@@ -53,6 +53,7 @@ E:\Coffee\CoffeeV2\bin\CoffeeV2.pdb
 E:\Coffee\CoffeeV2\bin\Antlr3.Runtime.dll
 E:\Coffee\CoffeeV2\bin\EntityFramework.dll
 E:\Coffee\CoffeeV2\bin\EntityFramework.SqlServer.dll
+E:\Coffee\CoffeeV2\bin\Kendo.Mvc.dll
 E:\Coffee\CoffeeV2\bin\Microsoft.Web.Infrastructure.dll
 E:\Coffee\CoffeeV2\bin\Newtonsoft.Json.dll
 E:\Coffee\CoffeeV2\bin\System.Web.Helpers.dll
@@ -66,6 +67,7 @@ E:\Coffee\CoffeeV2\bin\WebGrease.dll
 E:\Coffee\CoffeeV2\bin\Antlr3.Runtime.pdb
 E:\Coffee\CoffeeV2\bin\EntityFramework.xml
 E:\Coffee\CoffeeV2\bin\EntityFramework.SqlServer.xml
+E:\Coffee\CoffeeV2\bin\Kendo.Mvc.xml
 E:\Coffee\CoffeeV2\bin\Newtonsoft.Json.xml
 E:\Coffee\CoffeeV2\bin\System.Web.Helpers.xml
 E:\Coffee\CoffeeV2\bin\System.Web.Mvc.xml
@@ -74,10 +76,6 @@ E:\Coffee\CoffeeV2\bin\System.Web.Razor.xml
 E:\Coffee\CoffeeV2\bin\System.Web.WebPages.xml
 E:\Coffee\CoffeeV2\bin\System.Web.WebPages.Deployment.xml
 E:\Coffee\CoffeeV2\bin\System.Web.WebPages.Razor.xml
-E:\Coffee\CoffeeV2\obj\Debug\CoffeeV2.dll
-E:\Coffee\CoffeeV2\obj\Debug\CoffeeV2.pdb
-E:\Coffee\CoffeeV2\bin\Kendo.Mvc.dll
-E:\Coffee\CoffeeV2\bin\Kendo.Mvc.xml
 E:\Coffee\CoffeeV2\bin\bg-BG\Kendo.Mvc.resources.dll
 E:\Coffee\CoffeeV2\bin\cs-CZ\Kendo.Mvc.resources.dll
 E:\Coffee\CoffeeV2\bin\da-DK\Kendo.Mvc.resources.dll
@@ -95,4 +93,5 @@ E:\Coffee\CoffeeV2\bin\sv-SE\Kendo.Mvc.resources.dll
 E:\Coffee\CoffeeV2\bin\tr-TR\Kendo.Mvc.resources.dll
 E:\Coffee\CoffeeV2\bin\uk-UA\Kendo.Mvc.resources.dll
 E:\Coffee\CoffeeV2\bin\zh-CN\Kendo.Mvc.resources.dll
-E:\Coffee\CoffeeV2\obj\Debug\CoffeeV2.csprojResolveAssemblyReference.cache
+E:\Coffee\CoffeeV2\obj\Debug\CoffeeV2.dll
+E:\Coffee\CoffeeV2\obj\Debug\CoffeeV2.pdb

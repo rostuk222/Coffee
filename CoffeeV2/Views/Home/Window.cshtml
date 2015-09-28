@@ -21,10 +21,10 @@
                 Text = "Молоко", Value = "1"
               },
               new SelectListItem() {
-                Text = "Вершки", Value = "2"
+                Text = "Сироп", Value = "2"
               },
               new SelectListItem() {
-                Text = "Сироп", Value = "3"
+                Text = "Вершки", Value = "3"
               },
           })
           .SelectedIndex(3)
@@ -36,7 +36,9 @@
           .Name("size")
           .Placeholder("Select size...")
           .BindTo(new List<int>() {
+              60,
               120,
+              240,
               350,
               400,
               500

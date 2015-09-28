@@ -1,16 +1,14 @@
-﻿<div id="clientsDb">
+﻿
+<div id="stockDb">
     @( Html.Kendo().Grid<CoffeeV2.Models.Stock>()
-        .Name("grid")
+        .Name("StockGrid")
         .Columns(columns =>
         {
-            columns.Bound(c => c.Date).Title("Дата");
-            columns.Bound(c => c.ItemName).Title("Назва");
+            columns.Bound(c => c.Datetime).Title("Дата").Format("{0:dd-MM-yyyy}");
+            columns.Bound(c => c.Name).Title("Назва");
             columns.Bound(c => c.Quantity).Title("Кількість");
         })
-        .HtmlAttributes(new { style = "height: 300px;" })
-        .Scrollable()
-        .Groupable()
-        .Sortable()
+        .HtmlAttributes(new { style = "height: 1200px;" })
         .Pageable(pageable => pageable
             .Refresh(true)
             .PageSizes(true)
@@ -23,17 +21,10 @@
 </div>
 
 <style>
-    #clientsDb {
-        width: 1250px;
-        height: 396px;
+    #stockDb {
+        width: 1200px;
+        height: 1200px;
         margin: 20px auto 0;
         padding: 51px 4px 0 4px;
-    }
-
-    .customer-name {
-        display: inline-block;
-        vertical-align: middle;
-        line-height: 32px;
-        padding-left: 3px;
     }
 </style>
