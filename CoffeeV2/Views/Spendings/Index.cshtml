@@ -9,7 +9,7 @@
             columns.Bound(c => c.Quantity).Title("Кількість");
             columns.Bound(c => c.Price).Title("Ціна");
         })
-        .HtmlAttributes(new { style = "height: 1200px;" })
+        .HtmlAttributes(new { style = "height: 500px;" })
         .Pageable(pageable => pageable
             .Refresh(true)
             .PageSizes(true)
@@ -24,7 +24,7 @@
 <style>
     #spendingsDb {
         width: 1200px;
-        height: 1200px;
+        height: 500px;
         margin: 20px auto 0;
         padding: 51px 4px 0 4px;
     }

@@ -10,7 +10,7 @@
             columns.Bound(c => c.Cashless).Title("Безготівка");
             columns.Bound(c => c.Result).Title("Залишок");
         })
-        .HtmlAttributes(new { style = "height: 1200px;" })
+        .HtmlAttributes(new { style = "height: 500px;" })
         .Pageable(pageable => pageable
             .Refresh(true)
             .PageSizes(true)
@@ -25,7 +25,7 @@
 <style>
     #cashDb {
         width: 1200px;
-        height: 1200px;
+        height: 500px;
         margin: 20px auto 0;
         padding: 51px 4px 0 4px;
     }
