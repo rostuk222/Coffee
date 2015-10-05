@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoffeeV2.Models
+namespace CoffeeService.Models
 {
     using System;
     using System.Data.Entity;

@@ -4,32 +4,68 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-using CoffeeV2.Models;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
+using CoffeeService;
+using CoffeeService.Models;
 
-namespace CoffeeV2.Controllers
+namespace CoffeeService.Controllers
 {
     public class CashController : Controller
     {
-        // GET: Cash
-             CoffeeContext db = new CoffeeContext();
-
-             public ActionResult CashRead ([DataSourceRequest] DataSourceRequest request)
-        {
-          //  var date = DateTime.Parse("08/08/2015");
-           // var result = db.Cash.Where(cash => cash.Datetime == date);
-           // return result;
-         
-            IQueryable<Cash> cash = db.Cash;
-            DataSourceResult result = cash.ToDataSourceResult(request);
-            return Json(result);
-          
-        }
-
+        CashService service = new CashService(new CoffeeContext());
         public ActionResult Index()
         {
             return View();
+        }
+        public ActionResult CashRead([DataSourceRequest] DataSourceRequest request)
+        {
+            return Json(service.Read().ToDataSourceResult(request));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult CashCreate([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<Cash> products)
+        {
+            var results = new List<Cash>();
+
+            if (products != null && ModelState.IsValid)
+            {
+                foreach (var product in products)
+                {
+                    service.Create(product);
+                    results.Add(product);
+                }
+            }
+
+            return Json(results.ToDataSourceResult(request, ModelState));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult CashUpdate([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<Cash> products)
+        {
+            if (products != null && ModelState.IsValid)
+            {
+                foreach (var product in products)
+                {
+                    service.Update(product);
+                }
+            }
+
+            return Json(products.ToDataSourceResult(request, ModelState));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult CashDestroy([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<Cash> products)
+        {
+            if (products.Any())
+            {
+                foreach (var product in products)
+                {
+                    service.Destroy(product);
+                }
+            }
+
+            return Json(products.ToDataSourceResult(request, ModelState));
         }
     }
 }

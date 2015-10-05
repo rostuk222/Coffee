@@ -236,7 +236,7 @@
             </td>
             <td>
                 @(Html.Kendo().Button()
-                 .Content("Сік бутилка")
+                 .Content("Сік пляшка")
                     .Name("juicebottleButton")
                             .Events(a => a.Click("addsWindowOpen"))
                 )
@@ -309,11 +309,10 @@
     .Iframe(true)
     .Title("Viiiii")
     .HtmlAttributes(new { style = "background-color:aliceblue; border-color:teal;" })
-    .Content("Thank you!")
+    .Content(@<text>
+        @Html.Action("Order", "Home")
+    </text>)
 )
-
-
-
 
 <script>
     $(document).ready(function () {
@@ -332,5 +331,13 @@
 
         $("#get").kendoButton({click: submit });
     });
+
+    function addsWindowOpen() {
+        $("#coffeeWindow").data("kendoWindow").center().open();
+        }
+        function submit() {
+            $("#coffeeWindow").data("kendoWindow").close()
+            $("#thxWindow").data("kendoWindow").center().open()
+        }
 </script>
 

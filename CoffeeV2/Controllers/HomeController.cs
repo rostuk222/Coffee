@@ -4,13 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-using CoffeeV2.Models;
+using CoffeeService.Models;
 
 namespace CoffeeV2.Controllers
 {
     public class HomeController : Controller
     {
-        CoffeeContext db = new CoffeeContext();
 
         public ActionResult Index()
         {
@@ -23,6 +22,10 @@ namespace CoffeeV2.Controllers
         }
 
         public ActionResult Window()
+        {
+            return View();
+        }
+        public ActionResult Order()
         {
             return View();
         }

@@ -7,16 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoffeeV2.Models
+namespace CoffeeService.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Stock
+    public partial class Spendings
     {
         public int ID { get; set; }
         public System.DateTime Datetime { get; set; }
         public string Name { get; set; }
         public Nullable<int> Quantity { get; set; }
+        public Nullable<decimal> Price { get; set; }
     }
 }

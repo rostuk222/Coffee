@@ -1,0 +1,10 @@
+E:\Coffee\CoffeeService\bin\Debug\CoffeeService.dll.config
+E:\Coffee\CoffeeService\bin\Debug\CoffeeService.dll
+E:\Coffee\CoffeeService\bin\Debug\CoffeeService.pdb
+E:\Coffee\CoffeeService\bin\Debug\EntityFramework.dll
+E:\Coffee\CoffeeService\bin\Debug\EntityFramework.SqlServer.dll
+E:\Coffee\CoffeeService\bin\Debug\EntityFramework.xml
+E:\Coffee\CoffeeService\bin\Debug\EntityFramework.SqlServer.xml
+E:\Coffee\CoffeeService\obj\Debug\CoffeeService.dll
+E:\Coffee\CoffeeService\obj\Debug\CoffeeService.pdb
+E:\Coffee\CoffeeService\obj\Debug\CoffeeService.csprojResolveAssemblyReference.cache

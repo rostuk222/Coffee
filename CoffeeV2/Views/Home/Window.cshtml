@@ -2,10 +2,7 @@
 @{
     ViewBag.Title = "Window";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
-
+    }
 
     <h2>Виберіть добавки до кави</h2>
     <div id="option">
@@ -43,7 +40,23 @@
               400,
               500
           })
-          .SelectedIndex(3)
+          .SelectedIndex(6)
+          .Suggest(true)
+        )
+
+        <h3>Спосіб оплати</h3>
+        @(Html.Kendo().ComboBox()
+          .Name("pay")
+          .Placeholder("Select payment...")
+                .BindTo(new List<SelectListItem>() {
+              new SelectListItem() {
+                Text = "Готівка", Value = "1"
+              },
+              new SelectListItem() {
+                Text = "Безготівка", Value = "2"
+              },
+          })
+          .SelectedIndex(2)
           .Suggest(true)
         )
 

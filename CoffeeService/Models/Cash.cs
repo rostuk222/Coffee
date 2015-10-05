@@ -7,17 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CoffeeV2.Models
+namespace CoffeeService.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Spendings
+    public partial class Cash
     {
         public int ID { get; set; }
         public System.DateTime Datetime { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> Quantity { get; set; }
-        public Nullable<decimal> Price { get; set; }
+        public Nullable<decimal> Costs { get; set; }
+        public Nullable<decimal> Income { get; set; }
+        public Nullable<decimal> Cashless { get; set; }
+        public Nullable<decimal> Result { get; set; }
     }
 }

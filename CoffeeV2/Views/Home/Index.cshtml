@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.Kendo().TabStrip().Name("MainTab").Items(
+@Html.Kendo().TabStrip().Name("MainTab").HtmlAttributes(new { style = "background-color: #A0D190; color: #A0D190;" }).Items(
     tabstrip =>
     {
         tabstrip.Add().Text("Замовлення").Selected(true)
@@ -10,5 +10,6 @@
         tabstrip.Add().Text("Витрати").LoadContentFrom("Index","Spendings");
         tabstrip.Add().Text("Склад").LoadContentFrom("Index","Stock");
         tabstrip.Add().Text("Каса").LoadContentFrom("Index", "Cash");
+        
 }
 )

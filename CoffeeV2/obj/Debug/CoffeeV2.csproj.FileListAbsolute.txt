@@ -47,10 +47,12 @@ C:\Users\Sithis\Documents\Visual Studio 2013\Projects\CoffeeV2\CoffeeV2\bin\zh-C
 C:\Users\Sithis\Documents\Visual Studio 2013\Projects\CoffeeV2\CoffeeV2\obj\Debug\CoffeeV2.dll
 C:\Users\Sithis\Documents\Visual Studio 2013\Projects\CoffeeV2\CoffeeV2\obj\Debug\CoffeeV2.pdb
 C:\Users\Sithis\documents\visual studio 2013\Projects\CoffeeV2\CoffeeV2\obj\Debug\CoffeeV2.csprojResolveAssemblyReference.cache
+E:\Coffee\CoffeeV2\obj\Debug\CoffeeV2.csprojResolveAssemblyReference.cache
 E:\Coffee\CoffeeV2\bin\CoffeeV2.dll.config
 E:\Coffee\CoffeeV2\bin\CoffeeV2.dll
 E:\Coffee\CoffeeV2\bin\CoffeeV2.pdb
 E:\Coffee\CoffeeV2\bin\Antlr3.Runtime.dll
+E:\Coffee\CoffeeV2\bin\CoffeeService.dll
 E:\Coffee\CoffeeV2\bin\EntityFramework.dll
 E:\Coffee\CoffeeV2\bin\EntityFramework.SqlServer.dll
 E:\Coffee\CoffeeV2\bin\Kendo.Mvc.dll
@@ -64,6 +66,7 @@ E:\Coffee\CoffeeV2\bin\System.Web.WebPages.Deployment.dll
 E:\Coffee\CoffeeV2\bin\System.Web.WebPages.dll
 E:\Coffee\CoffeeV2\bin\System.Web.WebPages.Razor.dll
 E:\Coffee\CoffeeV2\bin\WebGrease.dll
+E:\Coffee\CoffeeV2\bin\CoffeeService.pdb
 E:\Coffee\CoffeeV2\bin\Antlr3.Runtime.pdb
 E:\Coffee\CoffeeV2\bin\EntityFramework.xml
 E:\Coffee\CoffeeV2\bin\EntityFramework.SqlServer.xml

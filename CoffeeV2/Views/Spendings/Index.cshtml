@@ -1,6 +1,6 @@
 ﻿
 <div id="spendingsDb">
-    @( Html.Kendo().Grid<CoffeeV2.Models.Spendings>()
+    @( Html.Kendo().Grid<CoffeeService.Models.Spendings>()
                 .Name("SpendingsGrid")
         .Columns(columns =>
         {
@@ -9,16 +9,24 @@
             columns.Bound(c => c.Quantity).Title("Кількість");
             columns.Bound(c => c.Price).Title("Ціна");
         })
-        .HtmlAttributes(new { style = "height: 500px;" })
-        .Pageable(pageable => pageable
-            .Refresh(true)
-            .PageSizes(true)
-            .ButtonCount(5))
-        .DataSource(dataSource => dataSource
+                   .HtmlAttributes(new { style = "height: 500px;" })
+            .Editable(editable => editable.Mode(GridEditMode.InCell))
+            .Pageable()
+            .Scrollable()
+            .DataSource(dataSource => dataSource
             .Ajax()
-            .Read(read => read.Action("SpendingsRead", "Spendings"))
+            .Batch(true)
+            .PageSize(20)
+            .ServerOperation(false)
+            .Events(events => events.Error("error_handler"))
+            .Model(model => model.Id(p => p.ID))
+                    .Read(read => read.Action("SpendingsRead", "Spendings"))
+                                    .Create("SpendingsCreate", "Spendings")
+                                    .Update("SpendingsUpdate", "Spendings")
+                                    .Destroy("SpendingsDestroy", "Spendings")
         )
     )
+  
 </div>
 
 <style>
@@ -27,5 +35,23 @@
         height: 500px;
         margin: 20px auto 0;
         padding: 51px 4px 0 4px;
+        background-color:  #A0D190;
+       
     }
 </style>
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function() {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>

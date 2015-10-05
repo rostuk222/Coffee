@@ -4,32 +4,68 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
-using CoffeeV2.Models;
-using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Kendo.Mvc.Extensions;
+using CoffeeService;
+using CoffeeService.Models;
 
-namespace CoffeeV2.Controllers
+namespace CoffeeService.Controllers
 {
     public class SpendingsController : Controller
     {
-        // GET: Spendings
-
-        CoffeeContext db = new CoffeeContext();
-
-        public ActionResult SpendingsRead ([DataSourceRequest] DataSourceRequest request)
-        {
-          //  var date = DateTime.Parse("08/08/2015");
-          //  var result = db.Spendings.Where(spending => spending.Datetime == date);
-         //   return result;
-
-            IQueryable<Spendings> spending = db.Spendings;
-            DataSourceResult result = spending.ToDataSourceResult(request);
-            return Json(result);
-        }
-
+        SpendingsService service = new SpendingsService(new CoffeeContext());
         public ActionResult Index()
         {
             return View();
+        }
+        public ActionResult SpendingsRead([DataSourceRequest] DataSourceRequest request)
+        {
+            return Json(service.Read().ToDataSourceResult(request));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult SpendingsCreate([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<Spendings> products)
+        {
+            var results = new List<Spendings>();
+
+            if (products != null && ModelState.IsValid)
+            {
+                foreach (var product in products)
+                {
+                    service.Create(product);
+                    results.Add(product);
+                }
+            }
+
+            return Json(results.ToDataSourceResult(request, ModelState));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult SpendingsUpdate([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<Spendings> products)
+        {
+            if (products != null && ModelState.IsValid)
+            {
+                foreach (var product in products)
+                {
+                    service.Update(product);
+                }
+            }
+
+            return Json(products.ToDataSourceResult(request, ModelState));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult SpendingsDestroy([DataSourceRequest] DataSourceRequest request, [Bind(Prefix = "models")]IEnumerable<Spendings> products)
+        {
+            if (products.Any())
+            {
+                foreach (var product in products)
+                {
+                    service.Destroy(product);
+                }
+            }
+
+            return Json(products.ToDataSourceResult(request, ModelState));
         }
     }
 }

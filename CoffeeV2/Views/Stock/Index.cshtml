@@ -1,21 +1,29 @@
 ﻿
 <div id="stockDb">
-    @( Html.Kendo().Grid<CoffeeV2.Models.Stock>()
+    @( Html.Kendo().Grid<CoffeeService.Models.Stock>()
         .Name("StockGrid")
         .Columns(columns =>
         {
             columns.Bound(c => c.Datetime).Title("Дата").Format("{0:dd-MM-yyyy}");
             columns.Bound(c => c.Name).Title("Назва");
             columns.Bound(c => c.Quantity).Title("Кількість");
-        })
-        .HtmlAttributes(new { style = "height: 500px;" })
-        .Pageable(pageable => pageable
-            .Refresh(true)
-            .PageSizes(true)
-            .ButtonCount(5))
-        .DataSource(dataSource => dataSource
-            .Ajax()
+            columns.Command(command => command.Destroy()).Width(110);
+    })
+               .HtmlAttributes(new { style = "height: 500px;" })
+    .Editable(editable => editable.Mode(GridEditMode.InCell))
+    .Pageable()
+    .Scrollable()
+    .DataSource(dataSource => dataSource
+    .Ajax()
+    .Batch(true)
+    .PageSize(20)
+    .ServerOperation(false)
+    .Events(events => events.Error("error_handler"))
+    .Model(model => model.Id(p => p.ID))
             .Read(read => read.Action("StockRead", "Stock"))
+                    .Create("StockCreate", "Stock")
+                    .Update("StockUpdate", "Stock")
+                    .Destroy("StockDestroy", "Stock")
         )
     )
 </div>
@@ -28,4 +36,20 @@
         padding: 51px 4px 0 4px;
     }
 </style>
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function() {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>
 

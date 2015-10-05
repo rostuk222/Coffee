@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Data.Entity;
-using CoffeeV2.Models;
+using CoffeeService.Models;
 
 namespace CoffeeV2
 {
@@ -18,7 +18,6 @@ namespace CoffeeV2
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //Database.SetInitializer(new CoffeeDbInitializer());
         }
     }
 }
